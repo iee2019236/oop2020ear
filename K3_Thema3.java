@@ -6,41 +6,74 @@ abstract class ExohikiKatoikia {
     private int timiHmeras;
 
     abstract String getEnoikioType();
+
     abstract double calcEnoikio();
 
-    public void setTypeName(String typeName) {this.typeName = typeName;}
-    public void setPeriohi_Poli(String periohi_Poli) {this.periohi_Poli = periohi_Poli;}
-    public void setTypeID(int typeID) {this.typeID = typeID;}
-    public void setNrOfDays(int nrOfDays) {this.nrOfDays = nrOfDays;}
-    public void setTimiHmeras(int timiHmeras) {this.timiHmeras = timiHmeras;}
-    public int getNrOfDays() {return nrOfDays;}
-    public int getTimiHmeras() {return timiHmeras;}
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
+    public void setPeriohi_Poli(String periohi_Poli) {
+        this.periohi_Poli = periohi_Poli;
+    }
+
+    public void setTypeID(int typeID) {
+        this.typeID = typeID;
+    }
+
+    public void setNrOfDays(int nrOfDays) {
+        this.nrOfDays = nrOfDays;
+    }
+
+    public void setTimiHmeras(int timiHmeras) {
+        this.timiHmeras = timiHmeras;
+    }
+
+    public int getNrOfDays() {
+        return nrOfDays;
+    }
+
+    public int getTimiHmeras() {
+        return timiHmeras;
+    }
 
     @Override
     public String toString() {
         return "ExohikiKatoikia [nrOfDays=" + nrOfDays + ", periohi_Poli=" + periohi_Poli + ", timiHmeras=" + timiHmeras
-                + ", typeID=" + typeID + ", typeName=" + typeName + "]";}}
+                + ", typeID=" + typeID + ", typeName=" + typeName + "]";
+    }
+}
 
 class Domatio extends ExohikiKatoikia {
     private int DomationTypeID;
 
     @Override
-    String getEnoikioType() {return "day";}
+    String getEnoikioType() {
+        return "day";
+    }
 
     @Override
-    double calcEnoikio() {return getNrOfDays() * getTimiHmeras();}
+    double calcEnoikio() {
+        return getNrOfDays() * getTimiHmeras();
+    }
 
-    public void setDomationTypeID(int domationTypeID) {DomationTypeID = domationTypeID;}
+    public void setDomationTypeID(int domationTypeID) {
+        DomationTypeID = domationTypeID;
+    }
 
     @Override
     public String toString() {
-        return super.toString() + " Domatio [DomationTypeID=" + DomationTypeID + "]";}}
+        return super.toString() + " Domatio [DomationTypeID=" + DomationTypeID + "]";
+    }
+}
 
 class Bungalow extends ExohikiKatoikia {
     private int PlithosDomation;
 
     @Override
-    String getEnoikioType() {return "week";}
+    String getEnoikioType() {
+        return "week";
+    }
 
     @Override
     double calcEnoikio() {
@@ -49,21 +82,30 @@ class Bungalow extends ExohikiKatoikia {
                 return getNrOfDays() * getTimiHmeras() * 0.9;
             } else {
                 throw new Exception("WrongRentPeriodException");
-        }} catch (Exception e) {
+            }
+        } catch (Exception e) {
             e.printStackTrace();
-            return 0;}}
+            return 0;
+        }
+    }
 
-    public void setPlithosDomation(int plithosDomation) {PlithosDomation = plithosDomation;}
+    public void setPlithosDomation(int plithosDomation) {
+        PlithosDomation = plithosDomation;
+    }
 
     @Override
     public String toString() {
-        return super.toString() + " Bungalow [PlithosDomation=" + PlithosDomation + "]";}}
+        return super.toString() + " Bungalow [PlithosDomation=" + PlithosDomation + "]";
+    }
+}
 
 class Villa extends ExohikiKatoikia {
     private int PlithosDomation;
 
     @Override
-    String getEnoikioType() {return "month";}
+    String getEnoikioType() {
+        return "month";
+    }
 
     @Override
     double calcEnoikio() {
@@ -72,15 +114,22 @@ class Villa extends ExohikiKatoikia {
                 return getNrOfDays() * getTimiHmeras() * 0.9;
             } else {
                 throw new WrongRentPeriodException();
-        }} catch (Exception e) {
+            }
+        } catch (Exception e) {
             e.printStackTrace();
-            return 0;}}
+            return 0;
+        }
+    }
 
-    public void setPlithosDomation(int plithosDomation) {PlithosDomation = plithosDomation;}
+    public void setPlithosDomation(int plithosDomation) {
+        PlithosDomation = plithosDomation;
+    }
 
     @Override
     public String toString() {
-        return super.toString() + " Villa [PlithosDomation=" + PlithosDomation + "]";}}
+        return super.toString() + " Villa [PlithosDomation=" + PlithosDomation + "]";
+    }
+}
 
 class K3_Thema3 {
     public static void main(String[] args) {
@@ -114,7 +163,11 @@ class K3_Thema3 {
         for (ExohikiKatoikia exohikiKatoikia : arr) {
             System.out.println(exohikiKatoikia.toString());
             System.out.println("Total rent is " + exohikiKatoikia.calcEnoikio() + " and is payed per "
-                    + exohikiKatoikia.getEnoikioType());}}}
+                    + exohikiKatoikia.getEnoikioType());
+        }
+    }
+}
 
 class WrongRentPeriodException extends Exception {
-    private static final long serialVersionUID = 1L;}
+    private static final long serialVersionUID = 1L;
+}
