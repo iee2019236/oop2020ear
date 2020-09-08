@@ -25,7 +25,7 @@ class Euro extends Mundial {
     }
 }
 
-public class Thema1_2_K1 {
+public class K1_Thema1_2 {
     public static void main(String args[]) {
         Sports sport = new Mundial();
         sport.meth1();

@@ -23,7 +23,7 @@ class Person {
     }
 }
 
-public class Thema1_3_K3 {
+public class K3_Thema1_3 {
     public static void main(String[] args) {
         Person person = new Person();
         System.out.println(person.getSalary());

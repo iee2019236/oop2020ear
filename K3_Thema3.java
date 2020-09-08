@@ -82,7 +82,7 @@ class Villa extends ExohikiKatoikia {
     public String toString() {
         return super.toString() + " Villa [PlithosDomation=" + PlithosDomation + "]";}}
 
-class Thema3_K3 {
+class K3_Thema3 {
     public static void main(String[] args) {
         int plithos = 3;
         ExohikiKatoikia[] arr = new ExohikiKatoikia[plithos];

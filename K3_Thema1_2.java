@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Thema1_2_K3 {
+public class K3_Thema1_2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Dwse hlikia:");

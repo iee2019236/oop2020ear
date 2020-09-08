@@ -31,7 +31,7 @@ class Rectangle implements Shape {
         this.height = height;
         this.width = width;}}
 
-class TestShapes {
+class K1_Thema3 {
     public static void main(String[] args) {
         Random rand = new Random();
         Shape[] shapes = new Shape[50];
